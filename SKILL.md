@@ -1,31 +1,31 @@
 ---
-slug: html-markdown
-displayName: HTML Markdown
-description: |
-  Convert HTML files or web pages to clean Markdown format using MinerU-powered processing. This skill handles HTML to Markdown conversion, web to Markdown transformation, content format conversion, readable documentation generation, and markup translation.
+name: html-markdown
+version: 0.2.0
+description: >
+  Convert HTML files and web pages to clean Markdown format. HTML to Markdown converter, web page to Markdown, HTML Markdown transformation, webpage Markdown export, markup to Markdown, HTML content to MD, web-to-Markdown tool, HTML document Markdown converter, page-to-Markdown extractor, online HTML to Markdown, HTML转Markdown, 网页转Markdown, HTML转MD工具, 网页Markdown导出, 在线HTML转换.
 
-  Core capability: Accept local HTML files or remote URLs and convert their content to well-formatted Markdown. Preserves headings, tables, lists, links, images, code blocks, and text formatting. Produces readable, documentation-quality Markdown output.
+  Use when asked to 'convert HTML to Markdown', 'turn web page into Markdown', 'export HTML as Markdown', 'transform HTML file to MD', 'get Markdown from HTML', 'convert this webpage to Markdown format'. Also handles: 'how do I convert HTML to Markdown?', 'is there a skill that turns HTML into Markdown?', 'I want to convert a web page to Markdown', 'can my agent export HTML content as Markdown?', 'I need Markdown from this HTML file'.
 
-  Use this when you need to: convert HTML to Markdown, turn a web page into Markdown, transform HTML documents to readable Markdown format, generate Markdown from HTML source, create documentation from HTML content, convert saved web pages to Markdown files, batch convert HTML files to Markdown, turn URL content into Markdown.
-
-  Trigger phrases: "convert this HTML to Markdown", "turn this web page into Markdown", "HTML to Markdown", "make Markdown from this HTML", "give me Markdown from this URL", "transform HTML file to Markdown", "web page to Markdown format".
-
-  Problems solved: HTML content needing Markdown format for documentation, web pages to convert for note-taking, HTML exports needing Markdown for version control, creating readable docs from HTML source, migrating HTML content to Markdown-based systems.
-
-  Powered by MinerU for intelligent document conversion and format transformation.
-
-  HTML转Markdown工具，将HTML文件或网页转换为Markdown格式。支持网页转Markdown、HTML文档转换、内容格式转换、文档生成、标记语言转换、批量转换、URL转Markdown。使用MinerU驱动的智能文档转换。
-tags: [html-to-markdown, web-to-markdown, content-conversion, markdown-generation, format-transformation, documentation, html-converter, mineru, markup-translation, batch-conversion, url-to-markdown, readable-format, web-content]
+  Solves the problem of HTML files being incompatible with Markdown-based workflows, difficulty migrating web content to documentation systems, inability to quickly get clean Markdown from web pages, and manual HTML-to-Markdown conversion being tedious and error-prone. Powered by MinerU for high-fidelity HTML-to-Markdown conversion. Preserves headings, links, images, tables, lists, code blocks, and formatting. Perfect for documentation migration, knowledge base creation, content repurposing, blog imports, and Markdown-first workflows.
+tags:
+  - html
+  - markdown
+  - converter
+  - html-to-markdown
+  - web-scraping
+  - mineru
+  - document-processing
+  - content-extraction
+  - export
+  - documentation
+  - content-migration
+  - formatting
 ---
 
-You are an HTML to Markdown conversion specialist. When the user asks to convert HTML files or web pages to Markdown, use the mineru tool to process the content.
+# HTML Markdown
 
-Steps:
-1. Accept HTML file path(s) or URL(s) from the user.
-2. Use the mineru tool to process each HTML file or URL for Markdown conversion.
-3. Convert all content elements: headings, tables, lists, links, images, code blocks, formatting.
-4. Output clean, well-formatted Markdown that reads naturally.
-5. Handle multiple files/URLs if requested, processing them in sequence.
-6. Report any conversion issues clearly.
+Convert HTML files and web pages to clean Markdown using MinerU.
 
-Focus on producing high-quality, readable Markdown. Preserve all meaningful content and formatting while removing HTML-specific noise.
+## Usage
+
+Use the mineru tool to convert HTML to Markdown. Provide the local HTML file path or web page and receive high-fidelity Markdown output preserving headings, tables, lists, links, images, code blocks, and document structure.
