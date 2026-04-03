@@ -1,31 +1,58 @@
 ---
 name: html-markdown
-version: 0.2.0
-description: >
-  Convert HTML files and web pages to clean Markdown format. HTML to Markdown converter, web page to Markdown, HTML Markdown transformation, webpage Markdown export, markup to Markdown, HTML content to MD, web-to-Markdown tool, HTML document Markdown converter, page-to-Markdown extractor, online HTML to Markdown, HTML转Markdown, 网页转Markdown, HTML转MD工具, 网页Markdown导出, 在线HTML转换.
-
-  Use when asked to 'convert HTML to Markdown', 'turn web page into Markdown', 'export HTML as Markdown', 'transform HTML file to MD', 'get Markdown from HTML', 'convert this webpage to Markdown format'. Also handles: 'how do I convert HTML to Markdown?', 'is there a skill that turns HTML into Markdown?', 'I want to convert a web page to Markdown', 'can my agent export HTML content as Markdown?', 'I need Markdown from this HTML file'.
-
-  Solves the problem of HTML files being incompatible with Markdown-based workflows, difficulty migrating web content to documentation systems, inability to quickly get clean Markdown from web pages, and manual HTML-to-Markdown conversion being tedious and error-prone. Powered by MinerU for high-fidelity HTML-to-Markdown conversion. Preserves headings, links, images, tables, lists, code blocks, and formatting. Perfect for documentation migration, knowledge base creation, content repurposing, blog imports, and Markdown-first workflows.
-tags:
-  - html
-  - markdown
-  - converter
-  - html-to-markdown
-  - web-scraping
-  - mineru
-  - document-processing
-  - content-extraction
-  - export
-  - documentation
-  - content-migration
-  - formatting
+description: "HTML to Markdown - convert local HTML files or web pages to clean Markdown using MinerU. Use html-extract for local files; use crawl (url-to-markdown) for live web pages."
+homepage: https://mineru.net
+metadata: {"openclaw": {"emoji": "📄", "requires": {"bins": ["mineru-open-api"], "env": ["MINERU_TOKEN"]}, "primaryEnv": "MINERU_TOKEN", "install": [{"id": "npm", "kind": "node", "package": "mineru-open-api", "bins": ["mineru-open-api"], "label": "Install via npm"}, {"id": "go", "kind": "go", "package": "github.com/opendatalab/MinerU-Ecosystem/cli/mineru-open-api", "bins": ["mineru-open-api"], "label": "Install via go install", "os": ["darwin", "linux"]}]}}
 ---
 
 # HTML Markdown
 
-Convert HTML files and web pages to clean Markdown using MinerU.
+Convert HTML files to clean Markdown using MinerU. For local HTML files use `extract`; for live web pages use `crawl`.
 
-## Usage
+## Install
 
-Use the mineru tool to convert HTML to Markdown. Provide the local HTML file path or web page and receive high-fidelity Markdown output preserving headings, tables, lists, links, images, code blocks, and document structure.
+```bash
+npm install -g mineru-open-api
+# or via Go (macOS/Linux):
+go install github.com/opendatalab/MinerU-Ecosystem/cli/mineru-open-api@latest
+```
+
+## Quick Start
+
+```bash
+# Convert local HTML file to Markdown (requires token)
+mineru-open-api extract page.html -o ./out/
+
+# Convert remote HTML file to Markdown (requires token)
+mineru-open-api extract https://example.com/doc.html -o ./out/
+
+# Convert live web page to Markdown via crawl (requires token)
+mineru-open-api crawl https://example.com/article -o ./out/
+```
+
+## Authentication
+
+Token required:
+
+```bash
+mineru-open-api auth             # Interactive token setup
+export MINERU_TOKEN="your-token" # Or via environment variable
+```
+
+Create token at: https://mineru.net/apiManage/token
+
+## Capabilities
+
+- Supported input: local .html file or HTTP/HTTPS URL
+- Local `.html` file: use `extract` (token required)
+- Live web page URL: use `crawl` (token required)
+- HTML is NOT supported by `flash-extract`
+- Language hint with `--language` (default: `ch`, use `en` for English)
+
+## Notes
+
+- HTML input always requires token (no `flash-extract` support)
+- For live web pages with JavaScript rendering, prefer `crawl`
+- Output goes to stdout by default; use `-o <dir>` to save to a file or directory
+- All progress/status messages go to stderr; document content goes to stdout
+- MinerU is open-source by OpenDataLab (Shanghai AI Lab): https://github.com/opendatalab/MinerU
